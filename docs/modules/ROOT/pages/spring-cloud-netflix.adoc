@@ -59,6 +59,8 @@ WARNING: The `defaultZone` property is case sensitive and requires camel case be
 
 The default application name (that is, the service ID), virtual host, and non-secure port (taken from the `Environment`) are `${spring.application.name}`, `${spring.application.name}` and `${server.port}`, respectively.
 
+NOTE: By default, the Eureka application name and virtual host are both derived from `spring.application.name`. If you configure `eureka.instance.virtualHostName` differently, use the virtual host name when looking up instances through Spring Cloud's `DiscoveryClient`.
+
 Having `spring-cloud-starter-netflix-eureka-client` on the classpath makes the app into both a Eureka "`instance`" (that is, it registers itself) and a "`client`" (it can query the registry to locate other services).
 The instance behaviour is driven by `eureka.instance.*` configuration keys, but the defaults are fine if you ensure that your application has a value for `spring.application.name` (this is the default for the Eureka service ID or VIP).
 
