@@ -51,7 +51,7 @@ public class RestClientTransportClientFactories implements TransportClientFactor
 	public TransportClientFactory newTransportClientFactory(final EurekaClientConfig clientConfig,
 			final Collection<Void> additionalFilters, final InstanceInfo myInstanceInfo,
 			final Optional<SSLContext> sslContext, final Optional<HostnameVerifier> hostnameVerifier) {
-		return new RestClientTransportClientFactory(args.getSSLContext(), args.getHostnameVerifier(),
+		return new RestClientTransportClientFactory(sslContext, hostnameVerifier,
 				args.getEurekaClientHttpRequestFactorySupplier(), args.getRestClientBuilderSupplier());
 	}
 
